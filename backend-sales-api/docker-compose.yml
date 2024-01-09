@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    entrypoint: .docker/entrypoint.sh
+    container_name: sales-api
+    ports:
+      - "3001:3001"
+    expose:
+      - "3001"
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - mongo-sales-db
+
+  mongo-sales-db:
+    image: tutum/mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: MongoDB2024@
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+
+  rabbitmq-sales:
+    image: rabbitmq:management
+    container_name: rabbitmq-sales
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 25676:25676
