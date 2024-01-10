@@ -1,4 +1,4 @@
-package com.product.apiproduct;
+package com.product.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +8,6 @@ public class ApiProductApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiProductApplication.class, args);
+		System.out.println("Hello, World!");
 	}
-
 }

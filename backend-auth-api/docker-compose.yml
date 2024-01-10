@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  app:
+  auth-api:
     build: .
     entrypoint: .docker/entrypoint.sh
     container_name: product-api
@@ -24,7 +24,7 @@ services:
     expose:
       - '5432'
     volumes:
-      - my-db:/var/lib/postgresql/data
+      - auth-db:/var/lib/postgresql/data
 
 volumes:
-  my-db:
+  auth-db:
