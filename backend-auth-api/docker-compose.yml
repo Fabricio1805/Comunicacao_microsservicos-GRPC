@@ -4,7 +4,7 @@ services:
   auth-api:
     build: .
     entrypoint: .docker/entrypoint.sh
-    container_name: product-api
+    container_name: auth-api
     ports:
       - "3002:3002"
     expose:
